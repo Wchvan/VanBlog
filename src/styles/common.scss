@@ -1,0 +1,107 @@
+@import "./vars.scss";
+@import "./mixins.scss";
+@import './reset.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  @include bg_color();
+  @include font_color();
+  #app{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.active {
+  @include font_active_color();
+}
+
+.cursor-point{
+  cursor: pointer;
+}
+
+/* 居中相关 */
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-x {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-y {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* 大小相关 */
+.wd100{
+  width: 100%;
+}
+.ht100{
+  height: 100%;
+}
+
+/* 背景相关 */
+.bg-BD{
+  background-color: #0095B6;
+  // color: ;
+}
+
+.bg-all{
+  background: url('@/assets/all-bg.png') no-repeat center;
+  background-size: 100% 100%;
+}
+
+/* 文字相关 */
+.font-red{
+  color: $red-color;
+}
+
+@font-face {
+  font-family: "XS";
+  src: url('@/assets/font/TTXS.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FZ";
+  src: url('@/assets/font/fz.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "XK";
+  src: url('@/assets/font/XK.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-xk{
+  font-family: "XK";
+}
+
+.font-xs{
+  font-family: "XS";
+}
+
+.font-fz{
+  font-family: "FZ";
+}
+
+.font-white{
+  color: #fff;
+}

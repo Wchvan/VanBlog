@@ -1,0 +1,39 @@
+@import './vars.scss';
+
+@mixin flex-row {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// 文字超出隐藏
+@mixin text-eli {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+@mixin bg_color(){
+  background: $background-color-light;
+  [data-theme=dark] & {
+    background: $background-color-dark;
+  }
+}
+
+@mixin font_color(){
+  color: $font-color-light;
+  [data-theme=dark] & {
+    color: $font-color-dark;
+  }
+}
+@mixin font_active_color(){
+  color: $font-active-color-light;
+  [data-theme=dark] & {
+    color: $font-active-color-dark;
+  }
+}

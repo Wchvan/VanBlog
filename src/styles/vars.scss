@@ -1,0 +1,39 @@
+$font-size: 28rpx;
+$primary-color: #54d339;
+$blue-color: #409eff;
+$red-color: #8B0000;
+$gray-color: #CFCFCF;
+
+/* 字体定义规范 */
+$font_samll:12Px;
+$font_medium_s:14Px;
+$font_medium:16Px;
+$font_large:18Px;
+
+/* 背景颜色规范(主要) */
+$background-color-light: #fff;//背景主题颜色默认-亮色
+$background-color-dark: #111;//背景主题颜色(夜间模式)
+
+/* 字体颜色规范(默认) */
+$font-color-light : #121212;//背景主题颜色默认-亮色
+$font-color-dark : #ddd;//字体主题颜色(夜间模式)
+
+/* 字体颜色规范(激活) */
+$font-active-color-light : #409eff;//字体主题颜色默认(网易红)
+$font-active-color-dark : #409eff;//字体主题颜色2(夜间模式)
+
+
+:root {
+    --bule-border: #72cce3;
+    --bule-color: #96dcee;
+    --yellow-background: #fffaa8;
+    --yellow-border: #f5eb71;
+
+    --indigo-background: #808fc7;
+    --indigo-border: #5d6baa;
+    --indigo-color: #6b7abb;
+    --gray-border: #e8e8ea;
+    --gray-dots: #e8e8ea;
+
+    --white: #fff;
+}
