@@ -12,31 +12,36 @@ import { useI18n } from 'vue-i18n';
 
 const I18n = useI18n();
 
-const welcomeText: {[key:string]: string[]} = {
-    'en-us' : ['Welcome To', "Van's", "Private Blog"],
-    'zh-cn' : ['欢迎来到', "Van的", "个人博客"]
-}
+const welcomeText: { [key: string]: string[] } = {
+    'en-us': ['Welcome To', "Van's", 'Private Blog'],
+    'zh-cn': ['欢迎来到', 'Van的', '个人博客'],
+};
 
-const { typingText, setAllText } = useTypingText(welcomeText[I18n.locale.value], 300);
+const { typingText, setAllText } = useTypingText(
+    welcomeText[I18n.locale.value],
+    300,
+);
 
-watch(() => I18n.locale.value, (newVal) => {
-    if (newVal === 'en-us') {
-        setAllText(welcomeText[newVal])
-    } else {
-        setAllText(welcomeText[newVal])
-    }
-})
-const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`
-
+watch(
+    () => I18n.locale.value,
+    (newVal) => {
+        if (newVal === 'en-us') {
+            setAllText(welcomeText[newVal]);
+        } else {
+            setAllText(welcomeText[newVal]);
+        }
+    },
+);
+const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`;
 </script>
 
 <style lang="scss">
-.container{
+.container {
     width: 100%;
     height: 100%;
     padding-top: 50px;
     display: flex;
-    .left{
+    .left {
         position: relative;
         top: calc(50% - 200px);
         flex: 1;
@@ -45,8 +50,8 @@ const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`
         font-weight: 600;
         text-align: center;
     }
-    .right{
-        flex:2;
+    .right {
+        flex: 2;
     }
 }
 </style>

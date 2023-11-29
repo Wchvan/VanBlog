@@ -1,8 +1,6 @@
 <template>
     <div class="header">
-        <div class="title">
-            Van's BLOG
-        </div>
+        <div class="title">Van's BLOG</div>
         <div
             class="i18n header-item"
             style="cursor: pointer"
@@ -70,7 +68,7 @@ const changeLanguage = () => {
     padding: 5px;
     line-height: 40px;
     font-size: 18px;
-    .title{
+    .title {
         // align-self: flex-start;
         font-size: 24px;
         margin-left: 50px;
