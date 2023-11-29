@@ -11,9 +11,9 @@ import i18n from './ i18n';
 const app = createApp(App);
 // 挂载pinia
 app.use(store);
-// 使用router
-app.use(router);
 // 使用i18n
 app.use(i18n);
+// 使用router
+app.use(router);
 // 挂载实例
 app.mount('#app');

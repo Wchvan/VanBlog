@@ -1,5 +1,8 @@
 <template>
     <div class="header">
+        <div class="title">
+            Van's BLOG
+        </div>
         <div
             class="i18n header-item"
             style="cursor: pointer"
@@ -29,8 +32,8 @@
 <script setup lang="ts">
 import { watch } from 'vue';
 import { ref } from 'vue';
-import { useI18n } from 'vue-i18n';
 import { Sunny, Moon } from '@element-plus/icons-vue';
+import { useI18n } from 'vue-i18n';
 
 const I18n = useI18n();
 
@@ -52,7 +55,7 @@ watch(themeDark, (newVal) => {
 
 const changeLanguage = () => {
     if (I18n.locale.value === 'en-us') {
-        I18n.locale.value = 'zh-ch';
+        I18n.locale.value = 'zh-cn';
     } else {
         I18n.locale.value = 'en-us';
     }
@@ -63,9 +66,16 @@ const changeLanguage = () => {
 .header {
     display: flex;
     justify-content: flex-end;
-    height: 40px;
+    height: 50px;
+    padding: 5px;
     line-height: 40px;
     font-size: 18px;
+    .title{
+        // align-self: flex-start;
+        font-size: 24px;
+        margin-left: 50px;
+        margin-right: auto;
+    }
     &-item {
         margin-right: 15px;
         display: flex;

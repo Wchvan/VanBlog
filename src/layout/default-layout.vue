@@ -1,6 +1,6 @@
 <template>
     <my-header></my-header>
-    <main class="main">
+    <main class="main" style="margin-top: -50px;">
         <slot></slot>
     </main>
 </template>

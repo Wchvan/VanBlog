@@ -1,6 +1,6 @@
 <template>
     <layout>
-        <div class="center text-3xl font-bold w-fit">Hello，World</div>
+        <router-view />
     </layout>
 </template>
 
