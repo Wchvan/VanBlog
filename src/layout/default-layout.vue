@@ -6,11 +6,11 @@
 </template>
 
 <script setup lang="ts">
-import myHeader from './header.vue'
+import myHeader from './header.vue';
 </script>
 
 <style lang="scss">
-main{
+main {
     width: 100%;
     height: 100%;
 }
