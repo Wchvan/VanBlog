@@ -1,12 +1,18 @@
 <template>
     <div class="header">
-        <div class="title" @click="$router.push('/')" >Van's BLOG</div>
-        <router-link to="/" class="header-item header-link" >{{ $t('header.index') }}</router-link>
-        <router-link to="/profile" class="header-item header-link">{{ $t('header.profile') }}</router-link>
-        <router-link to="/blogs" class="header-item header-link">{{ $t('header.blogs') }}</router-link>
+        <div class="title" @click="$router.push('/')">Van's BLOG</div>
+        <router-link to="/" class="header-item header-link">{{
+            $t('header.index')
+        }}</router-link>
+        <router-link to="/profile" class="header-item header-link">{{
+            $t('header.profile')
+        }}</router-link>
+        <router-link to="/blogs" class="header-item header-link">{{
+            $t('header.blogs')
+        }}</router-link>
         <div
-            class="i18n header-item" 
-            style="cursor: pointer; margin-left: auto;"
+            class="i18n header-item"
+            style="cursor: pointer; margin-left: auto"
             @click="changeLanguage"
         >
             {{ $t('header.language') }}
@@ -37,7 +43,9 @@ import { Sunny, Moon } from '@element-plus/icons-vue';
 import { useI18n } from 'vue-i18n';
 
 const I18n = useI18n();
-localStorage.getItem('i18n') ? I18n.locale.value = localStorage.getItem('i18n') as string : ''
+localStorage.getItem('i18n')
+    ? (I18n.locale.value = localStorage.getItem('i18n') as string)
+    : '';
 
 const themeDark = ref<boolean>(false);
 themeDark.value = sessionStorage.getItem('data-theme') === 'dark';
@@ -58,10 +66,10 @@ watch(themeDark, (newVal) => {
 const changeLanguage = () => {
     if (I18n.locale.value === 'en-us') {
         I18n.locale.value = 'zh-cn';
-        localStorage.setItem('i18n', 'zh-cn')
+        localStorage.setItem('i18n', 'zh-cn');
     } else {
         I18n.locale.value = 'en-us';
-        localStorage.setItem('i18n', 'en-us')
+        localStorage.setItem('i18n', 'en-us');
     }
 };
 </script>
@@ -90,7 +98,7 @@ const changeLanguage = () => {
         display: flex;
         font-weight: 400;
     }
-    &-link{
+    &-link {
         font-size: 22px;
         margin-right: 50px;
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
-        <div class="left" >
-            <div class="desc" v-html="typingText + cursorBlink" ></div>
+        <div class="left">
+            <div class="desc" v-html="typingText + cursorBlink"></div>
             <button class="btn">{{ $t('index.download') }}</button>
         </div>
         <div class="right"></div>
@@ -50,7 +50,7 @@ const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`
         flex: 1;
         height: 100%;
         position: relative;
-        .desc{
+        .desc {
             position: relative;
             top: calc(50% - 200px);
             font-size: 50px;
@@ -58,7 +58,7 @@ const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`
             font-weight: 600;
             text-align: center;
         }
-        .btn{
+        .btn {
             position: absolute;
             bottom: calc(50% - 150px);
             left: calc(50% - 50px);

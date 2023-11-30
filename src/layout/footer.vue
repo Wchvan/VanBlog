@@ -5,8 +5,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss">
 .footer {
@@ -16,7 +15,7 @@
     text-align: center;
     font-size: 16px;
     font-weight: 300;
-    .mail{
+    .mail {
         margin-left: 50px;
     }
 }
