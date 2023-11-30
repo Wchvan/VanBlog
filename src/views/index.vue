@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="left">
             <div class="desc" v-html="typingText + cursorBlink"></div>
-            <button class="btn" @click="downloadFile('/public/resume.pdf', '武超凡.pdf')">{{ $t('index.download') }}</button>
+            <button class="btn" @click="downloadFile('http://111.229.75.193/resume.pdf', '武超凡.pdf')">{{ $t('index.download') }}</button>
         </div>
         <div class="right"></div>
     </div>
