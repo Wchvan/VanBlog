@@ -36,7 +36,7 @@ window?.addEventListener('scroll', (e) => {
         eventFlag = false;
         setTimeout(() => {
             eventFlag = true;
-        }, 100);
+        }, 200);
     }
 });
 </script>
