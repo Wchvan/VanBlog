@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="left">
             <div class="desc" v-html="typingText + cursorBlink"></div>
-            <button class="btn">{{ $t('index.download') }}</button>
+            <button class="btn" @click="downloadFile('/public/resume.pdf', '武超凡.pdf')">{{ $t('index.download') }}</button>
         </div>
         <div class="right"></div>
     </div>
@@ -11,6 +11,7 @@
 <script setup lang="ts">
 import { useTypingText } from '@/hooks/useTypingText';
 import { watch } from 'vue';
+import { downloadFile } from '@/utils/download';
 import { useI18n } from 'vue-i18n';
 
 const I18n = useI18n();
@@ -43,8 +44,7 @@ const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`
 
 .wrapper {
     width: 100%;
-    height: 900px;
-    padding-top: 50px;
+    height: calc(100vh - 50px);
     display: flex;
     .left {
         flex: 1;

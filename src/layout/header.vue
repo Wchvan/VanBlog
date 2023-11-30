@@ -81,8 +81,8 @@ const changeLanguage = () => {
     position: fixed;
     width: 100%;
     z-index: 999;
-    height: 50px;
-    padding: 5px;
+    height: 60px;
+    padding-top: 20px;
     line-height: 40px;
     font-size: 18px;
     .title {

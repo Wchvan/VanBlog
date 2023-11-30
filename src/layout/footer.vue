@@ -10,7 +10,8 @@
 <style lang="scss">
 .footer {
     width: 100%;
-    height: 50px;
+    height: 60px;
+    padding-top: 10px;
     line-height: 50px;
     text-align: center;
     font-size: 16px;

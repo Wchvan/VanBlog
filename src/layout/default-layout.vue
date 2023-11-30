@@ -44,7 +44,7 @@ window?.addEventListener('scroll', (e) => {
 <style lang="scss">
 main {
     width: 100%;
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 60px);
     height: auto;
 }
 </style>
