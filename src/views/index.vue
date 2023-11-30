@@ -1,6 +1,9 @@
 <template>
-    <div class="container">
-        <div class="left" v-html="typingText + cursorBlink"></div>
+    <div class="wrapper">
+        <div class="left" >
+            <div class="desc" v-html="typingText + cursorBlink" ></div>
+            <button class="btn">{{ $t('index.download') }}</button>
+        </div>
         <div class="right"></div>
     </div>
 </template>
@@ -35,20 +38,37 @@ watch(
 const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`;
 </script>
 
-<style lang="scss">
-.container {
+<style lang="scss" scoped>
+@import '../styles/mixins.scss';
+
+.wrapper {
     width: 100%;
-    height: 100%;
+    height: 900px;
     padding-top: 50px;
     display: flex;
     .left {
-        position: relative;
-        top: calc(50% - 200px);
         flex: 1;
-        font-size: 50px;
-        line-height: 80px;
-        font-weight: 600;
-        text-align: center;
+        height: 100%;
+        position: relative;
+        .desc{
+            position: relative;
+            top: calc(50% - 200px);
+            font-size: 50px;
+            line-height: 80px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .btn{
+            position: absolute;
+            bottom: calc(50% - 150px);
+            left: calc(50% - 50px);
+            font-size: 16px;
+            padding: 0 20px;
+            font-weight: 400;
+            line-height: 40px;
+            height: 40px;
+            @include btn_color();
+        }
     }
     .right {
         flex: 2;

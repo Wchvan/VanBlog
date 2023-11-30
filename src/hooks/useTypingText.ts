@@ -22,7 +22,7 @@ export function useTypingText(
         typingText.value = '';
 
         flag = false;
-        await waitMillis(300);
+        await waitMillis(endWait);
         flag = true;
         typeText();
     }

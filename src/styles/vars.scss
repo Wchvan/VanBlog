@@ -20,20 +20,13 @@ $font-color-dark : #ddd;//字体主题颜色(夜间模式)
 
 /* 字体颜色规范(激活) */
 $font-active-color-light : #409eff;//字体主题颜色默认(网易红)
-$font-active-color-dark : #409eff;//字体主题颜色2(夜间模式)
+$font-active-color-dark : darkred;//字体主题颜色2(夜间模式)
 
 
-:root {
-    --bule-border: #72cce3;
-    --bule-color: #96dcee;
-    --yellow-background: #fffaa8;
-    --yellow-border: #f5eb71;
+/* 字体颜色规范(激活) */
+$btn-color-light : #409eff;//字体主题颜色默认(网易红)
+$btn-color-dark : darkred;//字体主题颜色2(夜间模式)
 
-    --indigo-background: #808fc7;
-    --indigo-border: #5d6baa;
-    --indigo-color: #6b7abb;
-    --gray-border: #e8e8ea;
-    --gray-dots: #e8e8ea;
-
-    --white: #fff;
-}
+/* 背景图片规范 */
+// $background-img-light: url('@/assets/light-bg.JPG');//背景主题颜色默认-亮色
+// $background-img-dark: url('@/assets/dark-bg.JPG');//背景主题颜色(夜间模式)

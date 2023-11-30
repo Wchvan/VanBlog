@@ -37,3 +37,22 @@
     color: $font-active-color-dark;
   }
 }
+
+@mixin btn_color(){
+  background-color: $btn-color-light;
+  color: #fff;
+  [data-theme=dark] & {
+    background-color: $btn-color-dark;
+  }
+}
+
+// @mixin bg_img(){
+//   background-image: $background-img-light;
+//   background-size: 100% 100%;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   [data-theme=dark] & {
+//     background-image: $background-img-dark;
+//   }
+// }
+

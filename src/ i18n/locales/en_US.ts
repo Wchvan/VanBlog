@@ -1,20 +1,29 @@
 export default {
     common: {
         more: 'Look More',
+    },
+    header: {
         theme: 'Theme',
+        language: 'English',
+        index: 'Home',
+        profile: 'Profile',
+        blogs: 'Blog',
     },
-    leftMenus: {
-        '/': 'Home',
-        Home: 'Home',
-        home: 'Home',
+    index: {
+        download: 'Download Resume',
     },
-    headMenus: {
-        subTitle: 'Organization service platform',
-        userName: 'ZhangSan',
+    profile: {
+        about: {
+            uestc: {
+                name: 'Software Engineer',
+            },
+            programer: {
+                frontend: 'Front-end Technology Stack：VUE',
+                backend: 'Back-end Technology Stack：Golang',
+            },
+            basketball: {
+                desc: 'a basketball lover',
+            },
+        },
     },
-    login: {
-        personal_center: 'personal center',
-        sign_out: 'sign out',
-    },
-    language: 'English',
 };

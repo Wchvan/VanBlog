@@ -1,20 +1,29 @@
 export default {
     common: {
         more: '查看更多',
+    },
+    header: {
         theme: '主题',
+        language: '中文',
+        index: '首页',
+        profile: '个人简历',
+        blogs: '博客',
     },
-    leftMenus: {
-        '/': '首页',
-        Home: '首页',
-        home: '首页',
+    index: {
+        download: '下载我的简历',
     },
-    headMenus: {
-        subTitle: '机构服务平台',
-        userName: '张三',
+    profile: {
+        about: {
+            uestc: {
+                name: '软件工程专业',
+            },
+            programer: {
+                frontend: '前端技术栈： VUE',
+                backend: '后端技术栈： Golang',
+            },
+            basketball: {
+                desc: '一名普通的篮球爱好者',
+            },
+        },
     },
-    login: {
-        personal_center: '个人中心',
-        sign_out: '退出',
-    },
-    language: '中文',
 };
