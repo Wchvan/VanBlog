@@ -3,7 +3,7 @@
     <main class="main">
         <slot></slot>
     </main>
-    <my-footer></my-footer>
+    <!-- <my-footer></my-footer> -->
 </template>
 
 <script setup lang="ts">
@@ -14,7 +14,7 @@ import myFooter from './footer.vue';
 <style lang="scss">
 main {
     width: 100%;
-    min-height: calc(100vh - 60px);
+    min-height: 100vh;
     height: auto;
 }
 </style>

@@ -10,7 +10,7 @@ export default {
         blogs: '博客',
     },
     index: {
-        download: '下载我的简历',
+        resume: '查看我的简历',
     },
     profile: {
         about: {

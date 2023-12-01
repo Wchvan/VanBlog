@@ -52,7 +52,7 @@
         </a>
         <a class="header-item">
             <el-tooltip
-                content="1027154225@qq.com"
+                content="wchvan@163.com"
                 placement="bottom"
                 effect="customized"
             >
@@ -108,7 +108,7 @@ watch(y, (newVal, oldVal) => {
         if (hidden.value) {
             hidden.value = true;
         }
-        if (navBg.value) {
+        if (navBg.value && newVal < 10) {
             navBg.value = false;
         }
     } else {
@@ -117,7 +117,7 @@ watch(y, (newVal, oldVal) => {
         }
         if (newVal > oldVal && !hidden.value) {
             hidden.value = true;
-        } else if (newVal < oldVal && hidden.value) {
+        } else if (newVal < oldVal - 1 && hidden.value) {
             hidden.value = false;
         }
     }
@@ -215,6 +215,7 @@ watch(y, (newVal, oldVal) => {
 .el-popper.is-customized {
     /* Set padding to ensure the height is 32px */
     padding: 6px 12px;
+    font-size: 16px;
     @include tooltip_color();
 }
 .el-popper.is-customized .el-popper__arrow::before {

@@ -10,7 +10,7 @@ export default {
         blogs: 'Blog',
     },
     index: {
-        download: 'Download Resume',
+        resume: 'Check Out My Resume',
     },
     profile: {
         about: {

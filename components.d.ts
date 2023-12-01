@@ -10,6 +10,7 @@ declare module 'vue' {
         ElAvatar: typeof import('element-plus/es')['ElAvatar'];
         ElSwitch: typeof import('element-plus/es')['ElSwitch'];
         ElTooltip: typeof import('element-plus/es')['ElTooltip'];
+        IEpArrowDown: typeof import('~icons/ep/arrow-down')['default'];
         IEpMessage: typeof import('~icons/ep/message')['default'];
         IEpMoon: typeof import('~icons/ep/moon')['default'];
         IEpSunny: typeof import('~icons/ep/sunny')['default'];
