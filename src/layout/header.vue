@@ -197,7 +197,6 @@ watch(y, (newVal, oldVal) => {
     height: 25px;
 }
 
-
 // tooltip
 @mixin tooltip_color() {
     background: linear-gradient(90deg, rgb(159, 229, 151), rgb(204, 229, 129));

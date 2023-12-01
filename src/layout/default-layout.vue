@@ -9,7 +9,6 @@
 <script setup lang="ts">
 import myHeader from './header.vue';
 import myFooter from './footer.vue';
-
 </script>
 
 <style lang="scss">
