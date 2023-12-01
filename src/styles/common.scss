@@ -30,6 +30,10 @@ body{
   @include font_active_color();
 }
 
+.card {
+  @include card_color()
+}
+
 .cursor-point{
   cursor: pointer;
 }
@@ -87,12 +91,25 @@ body{
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: "KT";
+  src: url('@/assets/font/kt.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .font-xk{
   font-family: "XK";
 }
 
 .font-fz{
   font-family: "FZ";
+}
+
+
+.font-kt{
+  font-family: "KT";
 }
 
 .font-white{

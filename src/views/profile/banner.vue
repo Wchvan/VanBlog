@@ -64,7 +64,7 @@ const goNext = () => {
     }
     .title {
         position: absolute;
-        top: calc(50% - 100px);
+        top: calc(50% - 70px);
         left: 50%;
         transform: translateX(-50%);
         color: #fff;

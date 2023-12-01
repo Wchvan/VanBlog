@@ -12,18 +12,11 @@ export default {
     index: {
         resume: 'Check Out My Resume',
     },
-    profile: {
-        about: {
-            uestc: {
-                name: 'Software Engineer',
-            },
-            programer: {
-                frontend: 'Front-end Technology Stack：VUE',
-                backend: 'Back-end Technology Stack：Golang',
-            },
-            basketball: {
-                desc: 'a basketball lover',
-            },
+    profile: {},
+    blogs: {
+        info: {
+            title: "Van's Channel",
+            desc: 'Actually, my wish is world peace！',
         },
     },
 };

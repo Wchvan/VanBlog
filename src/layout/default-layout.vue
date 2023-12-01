@@ -11,7 +11,7 @@ import myHeader from './header.vue';
 import myFooter from './footer.vue';
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main {
     width: 100%;
     min-height: 100vh;

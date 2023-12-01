@@ -12,18 +12,11 @@ export default {
     index: {
         resume: '查看我的简历',
     },
-    profile: {
-        about: {
-            uestc: {
-                name: '软件工程专业',
-            },
-            programer: {
-                frontend: '前端技术栈： VUE',
-                backend: '后端技术栈： Golang',
-            },
-            basketball: {
-                desc: '一名普通的篮球爱好者',
-            },
+    profile: {},
+    blogs: {
+        info: {
+            title: 'Van的个人博客',
+            desc: '其实，我的愿望是世界和平！',
         },
     },
 };

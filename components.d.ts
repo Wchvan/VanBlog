@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
     export interface GlobalComponents {
         ElAvatar: typeof import('element-plus/es')['ElAvatar'];
+        ElDivider: typeof import('element-plus/es')['ElDivider'];
         ElSwitch: typeof import('element-plus/es')['ElSwitch'];
         ElTooltip: typeof import('element-plus/es')['ElTooltip'];
         IEpArrowDown: typeof import('~icons/ep/arrow-down')['default'];
