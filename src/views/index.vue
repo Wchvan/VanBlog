@@ -2,12 +2,7 @@
     <div class="wrapper">
         <div class="left">
             <div class="desc" v-html="typingText + cursorBlink"></div>
-            <button
-                class="btn"
-                @click="
-                    goProfile
-                "
-            >
+            <button class="btn" @click="goProfile">
                 {{ $t('index.resume') }}
             </button>
         </div>
@@ -24,7 +19,7 @@ import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
 const I18n = useI18n();
-const router = useRouter()
+const router = useRouter();
 
 const welcomeText: { [key: string]: string[] } = {
     'en-us': ['Welcome To', "Van's", 'Private Blog'],
@@ -53,8 +48,8 @@ const goProfile = () => {
     //     'http://111.229.75.193/resume.pdf',
     //     '武超凡.pdf',
     // )
-    router.push('/profile')
-}
+    router.push('/profile');
+};
 </script>
 
 <style lang="scss" scoped>

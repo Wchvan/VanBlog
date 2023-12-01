@@ -39,12 +39,11 @@ watch(
     },
 );
 
-const { height } = useWindowSize()
+const { height } = useWindowSize();
 
 const goNext = () => {
-    window.scrollTo({top: height.value, behavior: "smooth"})
-}
-
+    window.scrollTo({ top: height.value, behavior: 'smooth' });
+};
 </script>
 
 <style lang="scss" scoped>
@@ -80,7 +79,7 @@ const goNext = () => {
             font-size: 120px;
         }
     }
-    .arrow{
+    .arrow {
         font-size: 100px;
         font-weight: 100;
         cursor: pointer;

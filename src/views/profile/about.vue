@@ -1,21 +1,28 @@
 <template>
-    <div class="wrapper" ref="wrapper">
-        <img src="#" class="bg" ref="bg"/>
+    <div ref="wrapper" class="wrapper">
+        <img ref="bg" src="#" class="bg" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import {intersectEle} from '@/utils/intersect';
+import { intersectEle } from '@/utils/intersect';
 import { onMounted } from 'vue';
 
-const wrapper = ref()
-const bg = ref()
+const wrapper = ref();
+const bg = ref();
 onMounted(() => {
-    intersectEle(bg.value, (item) => {
-        item.target.setAttribute('src', "http://111.229.75.193/light-bg.JPG")
-    }, true)
-})
+    intersectEle(
+        bg.value,
+        (item) => {
+            item.target.setAttribute(
+                'src',
+                'http://111.229.75.193/light-bg.JPG',
+            );
+        },
+        true,
+    );
+});
 </script>
 
 <style lang="scss" scoped>
