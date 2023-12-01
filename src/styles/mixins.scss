@@ -46,6 +46,13 @@
   }
 }
 
+@mixin nav_color(){
+  background-color: $nav-color-light;
+  [data-theme=dark] & {
+    background-color: $nav-color-dark;
+  }
+}
+
 // @mixin bg_img(){
 //   background-image: $background-img-light;
 //   background-size: 100% 100%;

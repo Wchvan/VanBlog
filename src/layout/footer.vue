@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <span class="title">@Wchvan</span>
-        <span class="mail">1027154225@qq.com</span>
+        <!-- <span class="mail">1027154225@qq.com</span> -->
     </div>
 </template>
 

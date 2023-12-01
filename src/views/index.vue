@@ -44,7 +44,7 @@ const cursorBlink = `<span style="padding-top: -2px; padding-left:2px">|</span>`
 
 .wrapper {
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 60px);
     display: flex;
     .left {
         flex: 1;

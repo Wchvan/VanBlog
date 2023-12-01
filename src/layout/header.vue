@@ -1,6 +1,15 @@
 <template>
-    <div class="header">
-        <div class="title" @click="$router.push('/')">Van's BLOG</div>
+    <div
+        class="header"
+        :class="[hidden ? 'nav-hidden' : '', navBg ? 'nav-bg' : '']"
+    >
+        <div class="title" @click="$router.push('/')">
+            <el-avatar
+                src="http://111.229.75.193/avatar.JPG"
+                style="margin-right: 10px"
+            />
+            <span>Van's BLOG</span>
+        </div>
         <router-link to="/" class="header-item header-link">{{
             $t('header.index')
         }}</router-link>
@@ -19,7 +28,10 @@
         </div>
         <div class="theme header-item">
             <span class="theme-label">{{ $t('header.theme') }}: </span>
-            <!-- <i-ep-Sunny v-show="!themeDark" class="theme-icon" style=" margin-left: 5px;"></i-ep-Sunny> -->
+            <i-ep-Sunny
+                class="theme-icon"
+                style="margin-left: 5px"
+            ></i-ep-Sunny>
             <el-switch
                 v-model="themeDark"
                 :active-action-icon="Moon"
@@ -30,9 +42,23 @@
                     margin: 0 10px;
                 "
             />
-            <!-- <i-ep-Moon v-show="themeDark" class="theme-icon"></i-ep-Moon> -->
+            <i-ep-Moon class="theme-icon"></i-ep-Moon>
         </div>
-        <theme-switch></theme-switch>
+        <a class="header-item" href="https://github.com/Wchvan" target="_blank">
+            <el-avatar
+                src="https://ts3.cn.mm.bing.net/th?id=ODLS.05409d17-5d83-4701-acc1-90430dd3b02c&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"
+                class="avatar"
+            />
+        </a>
+        <a class="header-item">
+            <el-tooltip
+                content="1027154225@qq.com"
+                placement="bottom"
+                effect="customized"
+            >
+                <i-ep-Message class="avatar"></i-ep-Message>
+            </el-tooltip>
+        </a>
     </div>
 </template>
 
@@ -41,6 +67,7 @@ import { watch } from 'vue';
 import { ref } from 'vue';
 import { Sunny, Moon } from '@element-plus/icons-vue';
 import { useI18n } from 'vue-i18n';
+import { useWindowScroll } from '@vueuse/core';
 
 const I18n = useI18n();
 localStorage.getItem('i18n')
@@ -72,9 +99,34 @@ const changeLanguage = () => {
         localStorage.setItem('i18n', 'en-us');
     }
 };
+
+const hidden = ref<boolean>(false);
+const navBg = ref<boolean>(false);
+const { y } = useWindowScroll();
+watch(y, (newVal, oldVal) => {
+    if (newVal < 60) {
+        if (hidden.value) {
+            hidden.value = true;
+        }
+        if (navBg.value) {
+            navBg.value = false;
+        }
+    } else {
+        if (!navBg.value) {
+            navBg.value = true;
+        }
+        if (newVal > oldVal && !hidden.value) {
+            hidden.value = true;
+        } else if (newVal < oldVal && hidden.value) {
+            hidden.value = false;
+        }
+    }
+});
 </script>
 
 <style lang="scss">
+@import '/src/styles/mixins.scss';
+
 .header {
     display: flex;
     justify-content: flex-end;
@@ -82,9 +134,13 @@ const changeLanguage = () => {
     width: 100%;
     z-index: 999;
     height: 60px;
-    padding-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
     line-height: 40px;
     font-size: 18px;
+    transition: all 0.5s;
+    opacity: 1;
+
     .title {
         // align-self: flex-start;
         font-size: 28px;
@@ -92,10 +148,13 @@ const changeLanguage = () => {
         margin-left: 50px;
         font-weight: 600;
         margin-right: 80px;
+        display: inline-flex;
+        align-items: center;
     }
     &-item {
         margin-right: 15px;
         display: flex;
+        align-items: center;
         font-weight: 400;
     }
     &-link {
@@ -122,5 +181,45 @@ const changeLanguage = () => {
             }
         }
     }
+}
+
+.nav-hidden {
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.nav-bg {
+    @include nav_color();
+}
+
+.avatar {
+    width: 25px;
+    height: 25px;
+}
+
+
+// tooltip
+@mixin tooltip_color() {
+    background: linear-gradient(90deg, rgb(159, 229, 151), rgb(204, 229, 129));
+    [data-theme='dark'] & {
+        background: darkred;
+    }
+}
+
+@mixin tooltip_before() {
+    background: linear-gradient(45deg, #b2e68d, #bce689);
+    [data-theme='dark'] & {
+        background: darkred;
+    }
+}
+
+.el-popper.is-customized {
+    /* Set padding to ensure the height is 32px */
+    padding: 6px 12px;
+    @include tooltip_color();
+}
+.el-popper.is-customized .el-popper__arrow::before {
+    @include tooltip_before();
+    right: 0;
 }
 </style>
