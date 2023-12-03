@@ -6,16 +6,19 @@
 export {}
 
 declare module 'vue' {
-    export interface GlobalComponents {
-        ElAvatar: typeof import('element-plus/es')['ElAvatar'];
-        ElDivider: typeof import('element-plus/es')['ElDivider'];
-        ElSwitch: typeof import('element-plus/es')['ElSwitch'];
-        ElTooltip: typeof import('element-plus/es')['ElTooltip'];
-        IEpArrowDown: typeof import('~icons/ep/arrow-down')['default'];
-        IEpMessage: typeof import('~icons/ep/message')['default'];
-        IEpMoon: typeof import('~icons/ep/moon')['default'];
-        IEpSunny: typeof import('~icons/ep/sunny')['default'];
-        RouterLink: typeof import('vue-router')['RouterLink'];
-        RouterView: typeof import('vue-router')['RouterView'];
-    }
+  export interface GlobalComponents {
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
+    ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    IEpArrowDown: typeof import('~icons/ep/arrow-down')['default']
+    IEpArrowLeft: typeof import('~icons/ep/arrow-left')['default']
+    IEpArrowRight: typeof import('~icons/ep/arrow-right')['default']
+    IEpMessage: typeof import('~icons/ep/message')['default']
+    IEpMoon: typeof import('~icons/ep/moon')['default']
+    IEpSunny: typeof import('~icons/ep/sunny')['default']
+    ImgCard: typeof import('./src/components/img-card.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+  }
 }

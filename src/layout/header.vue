@@ -5,7 +5,7 @@
     >
         <div class="title" @click="$router.push('/')">
             <el-avatar
-                src="http://111.229.75.193/avatar.JPG"
+                src="https://www.wchvan.online/files/pic/avatar.JPG"
                 style="margin-right: 10px"
             />
             <span>Van's BLOG</span>
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from 'vue';
+import { provide, watch } from 'vue';
 import { ref } from 'vue';
 import { Sunny, Moon } from '@element-plus/icons-vue';
 import { useI18n } from 'vue-i18n';
@@ -122,6 +122,7 @@ watch(y, (newVal, oldVal) => {
         }
     }
 });
+
 </script>
 
 <style lang="scss" scoped>
@@ -150,6 +151,7 @@ watch(y, (newVal, oldVal) => {
         margin-right: 80px;
         display: inline-flex;
         align-items: center;
+        cursor: pointer;
     }
     &-item {
         margin-right: 15px;
@@ -197,6 +199,10 @@ watch(y, (newVal, oldVal) => {
     height: 25px;
 }
 
+
+</style>
+
+<style lang="scss">
 // tooltip
 @mixin tooltip_color() {
     background: linear-gradient(90deg, rgb(159, 229, 151), rgb(204, 229, 129));

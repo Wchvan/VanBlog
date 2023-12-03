@@ -14,6 +14,5 @@ import blogs from './blogs.vue';
 .wrapper {
     width: 100%;
     padding-top: 60px;
-    font-family: 'KT', 'Times New Roman';
 }
 </style>

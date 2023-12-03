@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <img src="http://111.229.75.193/bg.png" class="bg" />
+        <img src="https://www.wchvan.online/files/pic/bg.png" class="bg" />
         <div class="title">
             <div class="subTitle">{{ typingText }} |</div>
             <div class="name">武超凡 - Van</div>
@@ -51,6 +51,7 @@ const goNext = () => {
     width: 100%;
     height: 100vh;
     position: relative;
+    font-family: "XK";
     // background: url() center no-repeat ;
     // background-size: 100% 100%;
     .bg {

@@ -9,3 +9,8 @@
 + 采用commitizen和husky规范git提交
 + 采用vue-i18n做成国际化效果
 + 采用scss实现主题切换
+
+
+### TODO
++ 占位图
++ 骨架屏

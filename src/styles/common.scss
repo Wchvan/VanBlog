@@ -14,12 +14,12 @@ html, img{
 
 body{
   margin: 0;
-  min-width: 1080px;
-  min-height: 800px;
+  min-width: 1000px;
+  min-height: 600px;
   width: 100%;
   @include bg_color();
   @include font_color();
-  font-family: "XK";
+  // font-family: "XK";
   #app{
     width: 100%;
     min-height: 100vh;
@@ -78,38 +78,14 @@ body{
 
 
 @font-face {
-  font-family: "FZ";
-  src: url('@/assets/font/fz.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "XK";
   src: url('@/assets/font/xk.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
-
-@font-face {
-  font-family: "KT";
-  src: url('@/assets/font/kt.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .font-xk{
   font-family: "XK";
-}
-
-.font-fz{
-  font-family: "FZ";
-}
-
-
-.font-kt{
-  font-family: "KT";
 }
 
 .font-white{

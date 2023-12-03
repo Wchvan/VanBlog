@@ -6,7 +6,9 @@
                 {{ $t('index.resume') }}
             </button>
         </div>
-        <div class="right"></div>
+        <div class="right">
+            <img src="https://www.wchvan.online/files/pic/index-person.png" class="img"/>
+        </div>
     </div>
     <div class="footer">@Wchvan</div>
 </template>
@@ -29,6 +31,8 @@ const welcomeText: { [key: string]: string[] } = {
 const { typingText, setAllText } = useTypingText(
     welcomeText[I18n.locale.value],
     300,
+    400,
+    1000
 );
 
 watch(
@@ -86,6 +90,13 @@ const goProfile = () => {
     }
     .right {
         flex: 2;
+        position: relative;
+        .img {
+            position: absolute;
+            height: 100vh; 
+            aspect-ratio: 0.75;
+            right: 100px;
+        }
     }
 }
 .footer {

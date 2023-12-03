@@ -1,6 +1,6 @@
 <template>
     <div class="info card">
-        <el-avatar src="http://111.229.75.193/avatar.JPG" class="info-avatar" />
+        <el-avatar src="https://www.wchvan.online/files/pic/avatar.JPG" class="info-avatar" />
         <div class="info-item">{{ $t('blogs.info.title') }}</div>
         <div class="info-item">{{ $t('blogs.info.desc') }}</div>
         <el-divider />

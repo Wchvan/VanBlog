@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="blogs">
         <div v-for="item in 10" :key="item" class="blog card"></div>
     </div>
 </template>
@@ -7,9 +7,10 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-.wrapper {
+.blogs {
     width: fit-content;
     position: relative;
+    top: 30px;
     left: 600px;
     right: auto;
     .blog {
