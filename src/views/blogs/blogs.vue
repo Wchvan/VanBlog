@@ -15,11 +15,11 @@ import { ref } from 'vue';
 const md = ref<string>('');
 
 function readTextFile(fileName: string) {
-    axios.get('/api/files/blogs/1.md').then(res => {
-        md.value = res.data
-    })
+    axios.get('/api/files/blogs/1.md').then((res) => {
+        md.value = res.data;
+    });
 }
-readTextFile('1.md')
+readTextFile('1.md');
 </script>
 
 <style lang="scss" scoped>

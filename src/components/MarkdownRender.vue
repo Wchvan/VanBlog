@@ -1,5 +1,5 @@
 <template>
-    <div ref="mrRef" class="app-chat-markdown-render"  v-html="html"></div>
+    <div ref="mrRef" class="app-chat-markdown-render" v-html="html"></div>
 </template>
 
 <script setup lang="ts">
@@ -14,8 +14,8 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
 
 const props = defineProps<{
-    value: string
-}>()
+    value: string;
+}>();
 
 const md = new MarkdownIt({
     linkify: true,
@@ -30,13 +30,15 @@ const md = new MarkdownIt({
         return hljs.highlightAuto(code).value;
     },
 });
-md.use(mdKatex, { blockClass: 'katexmath-block rounded-md', errorColor: ' #cc0000' });
+md.use(mdKatex, {
+    blockClass: 'katexmath-block rounded-md',
+    errorColor: ' #cc0000',
+});
 md.use(mila, { attrs: { target: '_blank', rel: 'noopener' } });
 
-const html = computed(()=>{
+const html = computed(() => {
     return md.render(props.value);
-})
-
+});
 </script>
 
 <style lang="scss">
@@ -46,7 +48,7 @@ const html = computed(()=>{
     color: #131416;
     font-size: 14px;
     font-weight: 400;
-    
+
     pre {
         background-color: #f2f6ff;
         border-radius: 5px;
@@ -94,7 +96,7 @@ const html = computed(()=>{
         word-break: break-all;
     }
 
-    &>*:last-child {
+    & > *:last-child {
         margin-bottom: 0 !important;
     }
 
@@ -256,14 +258,13 @@ const html = computed(()=>{
 
     // 光标
     &.app-chat-markdown-typing {
-
         &:empty::after,
-        &> :not(ol):not(ul):not(pre):last-child:after,
-        &>ol:last-child li:not(:has(p)):last-child:after,
-        &>ul:last-child li:not(:has(p)):last-child:after,
-        &>ol:last-child li:last-child p:last-child:after,
-        &>ul:last-child li:last-child p:last-child:after,
-        &>pre:last-child code:after {
+        & > :not(ol):not(ul):not(pre):last-child:after,
+        & > ol:last-child li:not(:has(p)):last-child:after,
+        & > ul:last-child li:not(:has(p)):last-child:after,
+        & > ol:last-child li:last-child p:last-child:after,
+        & > ul:last-child li:last-child p:last-child:after,
+        & > pre:last-child code:after {
             animation: blink 0.5s infinite;
             // content: '▋';
             content: '｜';
@@ -394,7 +395,6 @@ const html = computed(()=>{
 
 // =============媒体查询================
 @media screen and (max-width: 1680px) {
-
     .picture-list.picture-h .picture-item:nth-child(3n),
     .video-list.video-h .video-item:nth-child(3n) {
         margin-right: 0;
@@ -407,7 +407,6 @@ const html = computed(()=>{
 }
 
 @media screen and (min-width: 1680px) and (max-width: 1920px) {
-
     .picture-list.picture-h .picture-item:nth-child(4n),
     .video-list.video-h .video-item:nth-child(4n) {
         margin-right: 0;
@@ -420,7 +419,6 @@ const html = computed(()=>{
 }
 
 @media screen and (min-width: 1920px) {
-
     .picture-list.picture-h .picture-item:nth-child(5n),
     .video-list.video-h .video-item:nth-child(5n) {
         margin-right: 0;

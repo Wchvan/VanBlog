@@ -122,7 +122,6 @@ watch(y, (newVal, oldVal) => {
         }
     }
 });
-
 </script>
 
 <style lang="scss" scoped>
@@ -198,8 +197,6 @@ watch(y, (newVal, oldVal) => {
     width: 25px;
     height: 25px;
 }
-
-
 </style>
 
 <style lang="scss">

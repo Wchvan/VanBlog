@@ -1,5 +1,5 @@
 <template>
-    <div ref="wrapper" class="wrapper" >
+    <div ref="wrapper" class="wrapper">
         <div class="top">
             <div class="title">
                 <div class="title__num">02</div>
@@ -8,10 +8,13 @@
             <div class="desc">{{ typingText }} |</div>
         </div>
         <div class="project">
-            <img-card class="project-item" v-for="item in 3" :key="item" 
+            <img-card
+                v-for="item in 3"
+                :key="item"
+                class="project-item"
                 :img="`https://www.wchvan.online/files/pic/tech/${item}.svg`"
                 title="食刻系统"
-                content='111'
+                content="111"
                 width="30vw"
             />
         </div>
@@ -29,8 +32,8 @@
     </div>
 </template>
 
-<script setup lang='ts'>
-import imgCard from "@/components/img-card.vue";
+<script setup lang="ts">
+import imgCard from '@/components/img-card.vue';
 import { useTypingText } from '@/hooks/useTypingText';
 
 const { typingText, setAllText } = useTypingText(
@@ -40,13 +43,13 @@ const { typingText, setAllText } = useTypingText(
 );
 </script>
 
-<style lang='scss' scoped>
-.wrapper{
+<style lang="scss" scoped>
+.wrapper {
     width: 100%;
     height: 100vh;
-    .top{
+    .top {
         margin: 50px auto;
-        .title{
+        .title {
             font-size: 50px;
             font-weight: 600;
             display: flex;
@@ -58,59 +61,62 @@ const { typingText, setAllText } = useTypingText(
                 padding-right: 10px;
             }
         }
-        .desc{
+        .desc {
             text-align: center;
             font-size: 18px;
             font-weight: 400;
             margin-top: 5px;
         }
     }
-    
+
     .project {
         width: 100%;
         display: flex;
         justify-content: space-around;
-        &-item{
-
+        &-item {
         }
     }
 
-    .bottom{
+    .bottom {
         width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 0 20px;
         margin-top: 150px;
 
-        .divider{
-            background: linear-gradient(90deg, rgb(23, 107, 202), rgb(255, 255, 255));;
+        .divider {
+            background: linear-gradient(
+                90deg,
+                rgb(23, 107, 202),
+                rgb(255, 255, 255)
+            );
             height: 15px;
             width: 30vw;
             border-radius: 10px;
         }
-        .btn{
+        .btn {
             display: flex;
             margin-right: 50px;
 
-            &-item{
+            &-item {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
                 font-size: 28px;
                 font-weight: 600;
                 cursor: pointer;
-                &.left{
+                &.left {
                     background: #eee;
-                    [data-theme=dark] & {
+                    [data-theme='dark'] & {
                         background: rgb(100, 138, 122);
                     }
                     margin-right: 20px;
                 }
-                
-                &.right{
+
+                &.right {
                     color: #fff;
                     background: #409eff;
-                    [data-theme=dark] & {
+                    [data-theme='dark'] & {
                         color: #ddd;
                         background: darkred;
                     }

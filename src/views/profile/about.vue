@@ -1,12 +1,12 @@
 <template>
-    <div ref="wrapper" class="wrapper" >
+    <div ref="wrapper" class="wrapper">
         <!-- <img ref="bg" src="#" class="bg" /> -->
         <div class="profile">
-            <img src="#" class="profile-img" ref="img"/>
+            <img ref="img" src="#" class="profile-img" />
             <div class="profile-info">
                 <div class="profile-info__title">
                     <div class="profile-info__title-num">01</div>
-                    <div class="profile-info__title-txt">我的<br/>简介</div>
+                    <div class="profile-info__title-txt">我的<br />简介</div>
                 </div>
                 <div class="profile-info__content">
                     <p>{{ $t('profile.about.school') }}</p>
@@ -41,17 +41,17 @@ onMounted(() => {
             );
         },
         true,
-        {root: wrapper.value}
+        { root: wrapper.value },
     );
 });
 </script>
 
 <style lang="scss" scoped>
-@mixin bg_color(){
-  background: #abc1c6;
-  [data-theme=dark] & {
-    background: rgb(32,37,33);
-  }
+@mixin bg_color() {
+    background: #abc1c6;
+    [data-theme='dark'] & {
+        background: rgb(32, 37, 33);
+    }
 }
 
 .wrapper {
@@ -68,7 +68,7 @@ onMounted(() => {
         opacity: 0.95;
         z-index: -1;
     }
-    .profile{
+    .profile {
         position: relative;
         left: 50%;
         top: 50%;
@@ -77,16 +77,16 @@ onMounted(() => {
         flex-direction: row;
         width: 80vw;
         height: 80vh;
-        &-img{
+        &-img {
             height: 100%;
             aspect-ratio: 0.7;
             filter: brightness(90%);
-            [data-theme=dark] & {
+            [data-theme='dark'] & {
                 filter: brightness(70%);
             }
             margin-right: 100px;
         }
-        &-info{
+        &-info {
             &__title {
                 // line-height: 60px;
                 display: flex;
@@ -98,12 +98,12 @@ onMounted(() => {
                     font-weight: 1000;
                     color: darkred;
                 }
-                &-txt{
+                &-txt {
                     font-size: 36px;
                     font-weight: 600;
                 }
             }
-            &__content{
+            &__content {
                 padding-left: 20px;
                 font-size: 18px;
                 text-indent: 2rem;

@@ -51,7 +51,7 @@ const goNext = () => {
     width: 100%;
     height: 100vh;
     position: relative;
-    font-family: "XK";
+    font-family: 'XK';
     // background: url() center no-repeat ;
     // background-size: 100% 100%;
     .bg {

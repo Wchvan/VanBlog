@@ -7,7 +7,10 @@
             </button>
         </div>
         <div class="right">
-            <img src="https://www.wchvan.online/files/pic/index-person.png" class="img"/>
+            <img
+                src="https://www.wchvan.online/files/pic/index-person.png"
+                class="img"
+            />
         </div>
     </div>
     <div class="footer">@Wchvan</div>
@@ -32,7 +35,7 @@ const { typingText, setAllText } = useTypingText(
     welcomeText[I18n.locale.value],
     300,
     400,
-    1000
+    1000,
 );
 
 watch(
@@ -93,7 +96,7 @@ const goProfile = () => {
         position: relative;
         .img {
             position: absolute;
-            height: 100vh; 
+            height: 100vh;
             aspect-ratio: 0.75;
             right: 100px;
         }
