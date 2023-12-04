@@ -67,7 +67,7 @@ const props = defineProps<{
     &-img {
         @include bg_color();
         position: relative;
-        left: 50px;
+        left: 100px;
         width: 180px;
         height: 180px;
         border-radius: 50%;

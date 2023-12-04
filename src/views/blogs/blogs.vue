@@ -1,10 +1,26 @@
 <template>
     <div class="blogs">
-        <div v-for="item in 10" :key="item" class="blog card"></div>
+        <div v-for="item in 2" :key="item" class="blog card">
+            <MarkdownRender :value="md"></MarkdownRender>
+        </div>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MarkdownRender from '@/components/MarkdownRender.vue';
+import axios from 'axios';
+import { ReadStream } from 'fs';
+import { ref } from 'vue';
+
+const md = ref<string>('');
+
+function readTextFile(fileName: string) {
+    axios.get('/api/files/blogs/1.md').then(res => {
+        md.value = res.data
+    })
+}
+readTextFile('1.md')
+</script>
 
 <style lang="scss" scoped>
 .blogs {
@@ -19,6 +35,7 @@
         min-height: 300px;
         margin-bottom: 20px;
         border-radius: 20px;
+        padding: 20px;
     }
 }
 </style>

@@ -8,7 +8,7 @@
             <div class="desc">{{ typingText }} |</div>
         </div>
         <div class="project">
-            <img-card class="project-item" v-for="item in 3" 
+            <img-card class="project-item" v-for="item in 3" :key="item" 
                 :img="`https://www.wchvan.online/files/pic/tech/${item}.svg`"
                 title="食刻系统"
                 content='111'
@@ -44,17 +44,14 @@ const { typingText, setAllText } = useTypingText(
 .wrapper{
     width: 100%;
     height: 100vh;
-    position: relative;
     .top{
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: 50px auto;
         .title{
             font-size: 50px;
             font-weight: 600;
             display: flex;
             align-items: center;
+            justify-content: center;
             &__num {
                 color: darkred;
                 font-size: 60px;
@@ -72,21 +69,19 @@ const { typingText, setAllText } = useTypingText(
     .project {
         width: 100%;
         display: flex;
-        position: absolute;
         justify-content: space-around;
-        bottom: 80px;
         &-item{
 
         }
     }
 
     .bottom{
-        position: absolute;
         width: 100%;
-        bottom: 40px;
         display: flex;
         justify-content: space-between;
         padding: 0 20px;
+        margin-top: 150px;
+
         .divider{
             background: linear-gradient(90deg, rgb(23, 107, 202), rgb(255, 255, 255));;
             height: 15px;
