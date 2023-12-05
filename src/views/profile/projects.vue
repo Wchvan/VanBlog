@@ -91,11 +91,7 @@ const { typingText, setAllText } = useTypingText(
                 rgb(255, 255, 255)
             );
             [data-theme='dark'] & {
-                background: linear-gradient(
-                    90deg,
-                    darkred,
-                    rgb(134, 117, 125)
-                );
+                background: linear-gradient(90deg, darkred, rgb(134, 117, 125));
             }
             height: 15px;
             width: 30vw;

@@ -1,6 +1,9 @@
 <template>
     <div class="wrapper">
-        <img src="https://www.wchvan.online/files/pic/blog-banner.jpg" class="bg" />
+        <img
+            src="https://www.wchvan.online/files/pic/blog-banner.jpg"
+            class="bg"
+        />
         <div class="title">
             <div class="name">Archive</div>
             <div class="subTitle">{{ $t('blogs.banner.desc') }}</div>
@@ -8,9 +11,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .wrapper {

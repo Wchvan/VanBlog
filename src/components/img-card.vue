@@ -101,11 +101,7 @@ const props = defineProps<{
             );
 
             [data-theme='dark'] & {
-                background: linear-gradient(
-                    90deg,
-                    darkred,
-                    rgb(134, 117, 125)
-                );
+                background: linear-gradient(90deg, darkred, rgb(134, 117, 125));
             }
             height: 10px;
             width: 50px;
