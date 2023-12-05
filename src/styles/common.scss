@@ -30,10 +30,6 @@ body{
   @include font_active_color();
 }
 
-.card {
-  @include card_color()
-}
-
 .cursor-point{
   cursor: pointer;
 }

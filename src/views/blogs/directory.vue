@@ -1,13 +1,10 @@
 <template>
     <div class="wrapper">
-        <banner></banner>
-        <directory></directory>
+        
     </div>
 </template>
 
 <script setup lang="ts">
-import banner from './banner.vue';
-import Directory from './directory.vue';
 </script>
 
 <style lang="scss" scoped>

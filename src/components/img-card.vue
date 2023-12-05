@@ -42,14 +42,14 @@ const props = defineProps<{
 @mixin card_bg_color() {
     background: #fff;
     [data-theme='dark'] & {
-        background: rgb(100, 138, 122);
+        background: rgb(98, 24, 24, 0.8);
     }
 }
 
 @mixin more_font() {
     color: $blue-color;
     [data-theme='dark'] & {
-        color: $btn-color-dark;
+        color: #940202;
     }
 }
 
@@ -99,6 +99,14 @@ const props = defineProps<{
                 rgb(23, 107, 202),
                 rgb(255, 255, 255)
             );
+
+            [data-theme='dark'] & {
+                background: linear-gradient(
+                    90deg,
+                    darkred,
+                    rgb(134, 117, 125)
+                );
+            }
             height: 10px;
             width: 50px;
             border-radius: 10px;
@@ -117,7 +125,7 @@ const props = defineProps<{
                 left: 0;
                 right: 0;
                 height: 0;
-                bottom: 0;
+                bottom: -2px;
                 @include more_font_underline();
             }
         }

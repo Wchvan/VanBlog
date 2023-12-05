@@ -14,9 +14,8 @@ export default {
     },
     profile: {},
     blogs: {
-        info: {
-            title: "Van's Channel",
-            desc: 'Actually, my wish is world peace！',
+        banner: {
+            desc: "Wchvan's Blog",
         },
     },
 };
