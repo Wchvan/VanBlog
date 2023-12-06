@@ -21,20 +21,26 @@ import { watch } from 'vue';
 import { useRoute } from 'vue-router';
 import axios from 'axios';
 
-const route = useRoute()
-const menuFlag = ref<boolean>(true)
-const md = ref<string>('')
+const route = useRoute();
+const menuFlag = ref<boolean>(true);
+const md = ref<string>('');
 
-watch(() => route, (newVal) => {
-    if (newVal.query?.name) {
-        menuFlag.value = false
-        axios.get(`/api/files/blogs/${newVal.query.name}.md`).then(res => {
-            md.value = res.data
-        })
-    } else {
-        menuFlag.value = true
-    }
-}, {deep: true, immediate: true})
+watch(
+    () => route,
+    (newVal) => {
+        if (newVal.query?.name) {
+            menuFlag.value = false;
+            axios
+                .get(`/api/files/blogs/${newVal.query.name}.md`)
+                .then((res) => {
+                    md.value = res.data;
+                });
+        } else {
+            menuFlag.value = true;
+        }
+    },
+    { deep: true, immediate: true },
+);
 </script>
 
 <style lang="scss" scoped>

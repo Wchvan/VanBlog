@@ -46,7 +46,7 @@ const html = computed(() => {
     line-height: 22px;
     font-size: 18px;
     font-weight: 400;
-    
+
     hr {
         margin: 16px 0;
     }
@@ -54,7 +54,7 @@ const html = computed(() => {
     pre {
         color: #111;
         background-color: #f2f6ff;
-        [data-theme=dark] & {
+        [data-theme='dark'] & {
             background-color: #ccc;
         }
         border-radius: 5px;
@@ -131,7 +131,6 @@ const html = computed(() => {
             text-decoration: underline;
         }
     }
-
 
     // table
     table {
@@ -252,5 +251,4 @@ const html = computed(() => {
         opacity: 0;
     }
 }
-
 </style>
