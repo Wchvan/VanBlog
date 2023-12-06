@@ -1,6 +1,7 @@
 export default {
     common: {
         more: '查看更多',
+        total: '全部',
     },
     header: {
         theme: '主题',
@@ -26,6 +27,7 @@ export default {
     blogs: {
         banner: {
             desc: '归档文章',
+            author: '由 Wchvan 创作',
         },
     },
 };

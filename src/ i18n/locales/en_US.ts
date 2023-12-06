@@ -1,6 +1,7 @@
 export default {
     common: {
         more: 'Look More',
+        total: 'Total',
     },
     header: {
         theme: 'Theme',
@@ -16,6 +17,7 @@ export default {
     blogs: {
         banner: {
             desc: "Wchvan's Blog",
+            author: 'Posted By Wchvan',
         },
     },
 };
