@@ -31,11 +31,11 @@ watch(
     async (newVal) => {
         if (newVal.query?.id) {
             menuFlag.value = false;
-            const res = await PassageService.getPassage({id: Number(newVal.query.id)})
+            const res = await PassageService.getPassage({
+                id: Number(newVal.query.id),
+            });
             if (res.code === 200) {
-                axios
-                .get(`/api/v3${res.data.link}`)
-                .then((res) => {
+                axios.get(`/api/v3${res.data.link}`).then((res) => {
                     md.value = res.data;
                 });
             }

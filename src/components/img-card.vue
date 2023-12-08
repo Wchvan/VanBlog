@@ -94,7 +94,7 @@ const props = defineProps<{
             font-size: 32px;
             font-weight: 600;
         }
-        &__content{
+        &__content {
             font-size: 1rem;
             line-height: 1.5rem;
         }

@@ -7,13 +7,18 @@
             </div>
             <div class="desc">{{ typingText }} |</div>
         </div>
-        <div class="project" >
-            <div :style="{width: width + 'vw', left: left + 'vw'}" class="project-list">
+        <div class="project">
+            <div
+                :style="{ width: width + 'vw', left: left + 'vw' }"
+                class="project-list"
+            >
                 <img-card
-                    v-for="(item,index) in projectList"
+                    v-for="(item, index) in projectList"
                     :key="item.name"
                     class="project-item"
-                    :img="`https://www.wchvan.online/files/pic/tech/${index+1}.svg`"
+                    :img="`https://www.wchvan.online/files/pic/tech/${
+                        index + 1
+                    }.svg`"
                     :title="item.name"
                     :content="item.desc"
                     width="30vw"
@@ -25,10 +30,16 @@
             <div class="divider"></div>
             <div class="btn">
                 <div class="btn-item left">
-                    <i-ep-ArrowLeft class="center" @click="swiper(true)"></i-ep-ArrowLeft>
+                    <i-ep-ArrowLeft
+                        class="center"
+                        @click="swiper(true)"
+                    ></i-ep-ArrowLeft>
                 </div>
                 <div class="btn-item right">
-                    <i-ep-ArrowRight class="center" @click="swiper(false)"></i-ep-ArrowRight>
+                    <i-ep-ArrowRight
+                        class="center"
+                        @click="swiper(false)"
+                    ></i-ep-ArrowRight>
                 </div>
             </div>
         </div>
@@ -48,26 +59,26 @@ const { typingText, setAllText } = useTypingText(
     1000,
 );
 
-const projectList = ref<I.Project.ProjectItem[]>([])
-const width = ref<number>(0)
-ProjectService.getProjects().then(res => {
-    if(res.code === 200) {
-        projectList.value = res.data.list
-        width.value = res.data.list.length * 33 
+const projectList = ref<I.Project.ProjectItem[]>([]);
+const width = ref<number>(0);
+ProjectService.getProjects().then((res) => {
+    if (res.code === 200) {
+        projectList.value = res.data.list;
+        width.value = res.data.list.length * 33;
     }
-})
+});
 
-const left = ref<number>(0)
+const left = ref<number>(0);
 const swiper = (flag: boolean) => {
-    const step = width.value / projectList.value.length
-    if (flag && left.value  < 0) {
-        left.value += step
+    const step = width.value / projectList.value.length;
+    if (flag && left.value < 0) {
+        left.value += step;
     }
 
-    if (!flag && left.value + step * (projectList.value.length - 3) > 0){
-        left.value -= step
+    if (!flag && left.value + step * (projectList.value.length - 3) > 0) {
+        left.value -= step;
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -104,7 +115,7 @@ const swiper = (flag: boolean) => {
             position: relative;
             justify-content: space-around;
         }
-        &-item{
+        &-item {
             line-height: 2rem;
         }
     }

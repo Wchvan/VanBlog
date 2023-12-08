@@ -3,8 +3,17 @@
         <button class="total">{{ $t('common.total') }} : 12</button>
         <div v-for="item in passageList" :key="item.date" class="blog">
             <div class="blog-date">{{ item.date }}</div>
-            <div v-for="passage in item.data" :key="passage.name" class="blog-title">
-                <a @click="goDetail(passage)" style="display: flex;justify-content: space-between;"><span>{{ passage.name }}</span> <span >{{ passage.time.slice(0,10) }}</span></a>
+            <div
+                v-for="passage in item.data"
+                :key="passage.name"
+                class="blog-title"
+            >
+                <a
+                    style="display: flex; justify-content: space-between"
+                    @click="goDetail(passage)"
+                    ><span>{{ passage.name }}</span>
+                    <span>{{ passage.time.slice(0, 10) }}</span></a
+                >
                 <el-divider style="margin: 18px"></el-divider>
             </div>
         </div>
@@ -17,21 +26,22 @@ import PassageService from '@/api/passage';
 import { ref } from 'vue';
 import * as I from '@/interface/index.d';
 
-
 const router = useRouter();
 
-const passageList = ref<{
+const passageList = ref<
+    {
         date: string;
-        data: I.Passage.PassageItem[]
-}[]>([])
+        data: I.Passage.PassageItem[];
+    }[]
+>([]);
 PassageService.getPassages({
     page: 1,
-    pageSize: 50
-}).then(res => {
-    if(res.code === 200) {
-        passageList.value = res.data
+    pageSize: 50,
+}).then((res) => {
+    if (res.code === 200) {
+        passageList.value = res.data;
     }
-})
+});
 
 const goDetail = (passage: I.Passage.PassageItem) => {
     router.push(`/blogs?id=${passage.id}&name=${passage.name}`);
