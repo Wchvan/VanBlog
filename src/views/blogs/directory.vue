@@ -1,10 +1,10 @@
 <template>
     <div class="directory">
         <button class="total">{{ $t('common.total') }} : 12</button>
-        <div v-for="item in 3" :key="item" class="blog">
-            <div class="blog-date">2020</div>
-            <div v-for="item in 3" :key="item" class="blog-title">
-                <a @click="goDetail">《深入理解Vue的diff算法》</a>
+        <div v-for="item in passageList" :key="item.date" class="blog">
+            <div class="blog-date">{{ item.date }}</div>
+            <div v-for="passage in item.data" :key="passage.name" class="blog-title">
+                <a @click="goDetail(passage)" style="display: flex;justify-content: space-between;"><span>{{ passage.name }}</span> <span >{{ passage.time.slice(0,10) }}</span></a>
                 <el-divider style="margin: 18px"></el-divider>
             </div>
         </div>
@@ -13,11 +13,28 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
+import PassageService from '@/api/passage';
+import { ref } from 'vue';
+import * as I from '@/interface/index.d';
+
 
 const router = useRouter();
 
-const goDetail = () => {
-    router.push('/blogs?name=深入理解Vue的diff算法');
+const passageList = ref<{
+        date: string;
+        data: I.Passage.PassageItem[]
+}[]>([])
+PassageService.getPassages({
+    page: 1,
+    pageSize: 50
+}).then(res => {
+    if(res.code === 200) {
+        passageList.value = res.data
+    }
+})
+
+const goDetail = (passage: I.Passage.PassageItem) => {
+    router.push(`/blogs?id=${passage.id}&name=${passage.name}`);
 };
 </script>
 

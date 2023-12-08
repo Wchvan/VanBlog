@@ -62,10 +62,15 @@ export default defineConfig({
     server: {
         port: 8080, //启动端口
         proxy: {
-            '/api': {
+            '/api/v1': {
+                target: 'http://www.wchvan.online:8081',
+                changeOrigin: true,
+                rewrite: (path: string) => path.replace(/^\/api\/v1/, '/v1'),
+            },
+            '/api/v3': {
                 target: 'https://www.wchvan.online',
                 changeOrigin: true,
-                rewrite: (path: string) => path.replace(/^\/api/, ''),
+                rewrite: (path: string) => path.replace(/^\/api\/v3/, ''),
             },
         },
     },

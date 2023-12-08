@@ -16,9 +16,9 @@
             </div>
             <div class="card-main__divider"></div>
             <div class="card-main__content">
-                {{ props.content }}
+                <div v-html="props.content.replaceAll('\n', '<br/>')"></div>
             </div>
-            <a class="card-main__link" href="#">
+            <a class="card-main__link" :href="props.link" target="_blank">
                 {{ $t('common.more') }}
             </a>
         </div>
@@ -33,6 +33,7 @@ const props = defineProps<{
     title: string;
     content: string;
     width: string;
+    link: string;
 }>();
 </script>
 
@@ -92,6 +93,10 @@ const props = defineProps<{
         &__title {
             font-size: 32px;
             font-weight: 600;
+        }
+        &__content{
+            font-size: 1rem;
+            line-height: 1.5rem;
         }
         &__divider {
             background: linear-gradient(

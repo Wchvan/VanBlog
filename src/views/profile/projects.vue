@@ -7,25 +7,28 @@
             </div>
             <div class="desc">{{ typingText }} |</div>
         </div>
-        <div class="project">
-            <img-card
-                v-for="item in 3"
-                :key="item"
-                class="project-item"
-                :img="`https://www.wchvan.online/files/pic/tech/${item}.svg`"
-                title="食刻系统"
-                content="111"
-                width="30vw"
-            />
+        <div class="project" >
+            <div :style="{width: width + 'vw', left: left + 'vw'}" class="project-list">
+                <img-card
+                    v-for="(item,index) in projectList"
+                    :key="item.name"
+                    class="project-item"
+                    :img="`https://www.wchvan.online/files/pic/tech/${index+1}.svg`"
+                    :title="item.name"
+                    :content="item.desc"
+                    width="30vw"
+                    :link="item.link"
+                />
+            </div>
         </div>
         <div class="bottom">
             <div class="divider"></div>
             <div class="btn">
                 <div class="btn-item left">
-                    <i-ep-ArrowLeft class="center"></i-ep-ArrowLeft>
+                    <i-ep-ArrowLeft class="center" @click="swiper(true)"></i-ep-ArrowLeft>
                 </div>
                 <div class="btn-item right">
-                    <i-ep-ArrowRight class="center"></i-ep-ArrowRight>
+                    <i-ep-ArrowRight class="center" @click="swiper(false)"></i-ep-ArrowRight>
                 </div>
             </div>
         </div>
@@ -35,18 +38,43 @@
 <script setup lang="ts">
 import imgCard from '@/components/img-card.vue';
 import { useTypingText } from '@/hooks/useTypingText';
+import * as I from '@/interface/index.d';
+import { ref } from 'vue';
+import ProjectService from '@/api/project';
 
 const { typingText, setAllText } = useTypingText(
     ['在项目中不断学习并提升前端技术'],
     150,
     1000,
 );
+
+const projectList = ref<I.Project.ProjectItem[]>([])
+const width = ref<number>(0)
+ProjectService.getProjects().then(res => {
+    if(res.code === 200) {
+        projectList.value = res.data.list
+        width.value = res.data.list.length * 33 
+    }
+})
+
+const left = ref<number>(0)
+const swiper = (flag: boolean) => {
+    const step = width.value / projectList.value.length
+    if (flag && left.value  < 0) {
+        left.value += step
+    }
+
+    if (!flag && left.value + step * (projectList.value.length - 3) > 0){
+        left.value -= step
+    }
+}
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
     width: 100%;
     height: 100vh;
+    overflow-x: hidden;
     .top {
         margin: 50px auto;
         .title {
@@ -71,9 +99,13 @@ const { typingText, setAllText } = useTypingText(
 
     .project {
         width: 100%;
-        display: flex;
-        justify-content: space-around;
-        &-item {
+        &-list {
+            display: flex;
+            position: relative;
+            justify-content: space-around;
+        }
+        &-item{
+            line-height: 2rem;
         }
     }
 

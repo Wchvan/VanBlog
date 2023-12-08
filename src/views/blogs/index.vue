@@ -20,6 +20,7 @@ import blog from './blog.vue';
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
 import axios from 'axios';
+import PassageService from '@/api/passage';
 
 const route = useRoute();
 const menuFlag = ref<boolean>(true);
@@ -27,14 +28,17 @@ const md = ref<string>('');
 
 watch(
     () => route,
-    (newVal) => {
-        if (newVal.query?.name) {
+    async (newVal) => {
+        if (newVal.query?.id) {
             menuFlag.value = false;
-            axios
-                .get(`/api/files/blogs/${newVal.query.name}.md`)
+            const res = await PassageService.getPassage({id: Number(newVal.query.id)})
+            if (res.code === 200) {
+                axios
+                .get(`/api/v3${res.data.link}`)
                 .then((res) => {
                     md.value = res.data;
                 });
+            }
         } else {
             menuFlag.value = true;
         }
