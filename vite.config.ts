@@ -64,6 +64,7 @@ export default defineConfig({
         proxy: {
             '/api/v1': {
                 target: 'http://www.wchvan.online:8081',
+                // target: 'http://localhost:8081',
                 changeOrigin: true,
                 rewrite: (path: string) => path.replace(/^\/api\/v1/, '/v1'),
             },

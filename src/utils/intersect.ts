@@ -4,7 +4,6 @@ export function intersectEles(
     once?: boolean,
     options?: IntersectionObserverInit | undefined,
 ) {
-    console.log(eles);
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((item) => {
             if (item.isIntersecting) {

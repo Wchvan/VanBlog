@@ -84,8 +84,9 @@ const swiper = (flag: boolean) => {
 <style lang="scss" scoped>
 .wrapper {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
+    padding-bottom: 40px;
     .top {
         margin: 50px auto;
         .title {

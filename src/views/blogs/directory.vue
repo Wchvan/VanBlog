@@ -1,6 +1,6 @@
 <template>
     <div class="directory">
-        <button class="total">{{ $t('common.total') }} : 12</button>
+        <button class="total">{{ $t('common.total') }} : {{ total }}</button>
         <div v-for="item in passageList" :key="item.date" class="blog">
             <div class="blog-date">{{ item.date }}</div>
             <div
@@ -27,6 +27,7 @@ import { ref } from 'vue';
 import * as I from '@/interface/index.d';
 
 const router = useRouter();
+const total = ref<number>(0);
 
 const passageList = ref<
     {
@@ -40,6 +41,9 @@ PassageService.getPassages({
 }).then((res) => {
     if (res.code === 200) {
         passageList.value = res.data;
+        for (let item of passageList.value) {
+            total.value += item.data.length
+        }
     }
 });
 

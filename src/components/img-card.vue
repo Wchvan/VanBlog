@@ -62,7 +62,6 @@ const props = defineProps<{
 }
 .card {
     background: transparent;
-    aspect-ratio: 1.2;
     &-img {
         @include bg_color();
         position: relative;
