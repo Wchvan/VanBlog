@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "@mdit/plugin-img-lazyload": "^0.8.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
     "@types/marked": "^6.0.0",
     "@vueuse/core": "^10.2.1",

@@ -4,7 +4,7 @@
         <div ref="catalogContext" class="catalog" :class="flag ? '': 'cata-hidden'">
             <div class="catalog-title">目录</div>
             <el-divider />
-            <div ref="catalogBox"></div>
+            <div ref="catalogBox" class="catalog-box"></div>
         </div>
     </div>
 </template>
@@ -92,8 +92,13 @@ watch( ()=>y, (newVal) => {
 .catalog {
     position: fixed;
     top: 50%;
-    right: 50px;
+    right: 10px;
+    border: 1px solid #eee;
     background: #fff;
+    [data-theme=dark] & {
+        background: #000;
+        border: 1px solid #bbb;
+    }
     transform: translateY(-50%);
     padding: 20px;
     border-radius: 5px;
@@ -101,6 +106,10 @@ watch( ()=>y, (newVal) => {
     transition: all 0.5s;
     min-width: 10vw;
 
+    &-box{
+        max-height: 70vh;
+        overflow: auto;
+    }
     &-title{
         font-size: 1.5rem;
         text-align: center;
