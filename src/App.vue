@@ -14,15 +14,13 @@ import { preLoadImgs } from '@/utils/picture';
 const view = sessionStorage.getItem('view');
 
 if (view !== 'true') {
-    fetch('https://api.ipify.org?format=json')
-    .then(res=>{
-        res.json().then(res => {
+    fetch('https://api.ipify.org?format=json').then((res) => {
+        res.json().then((res) => {
             ViewLogService.createViewLog({
                 ip: res.ip,
-            }).then(res => sessionStorage.setItem('view', 'true'))
-        })
-        
-    })
+            }).then((res) => sessionStorage.setItem('view', 'true'));
+        });
+    });
 }
 
 preLoadImgs([
