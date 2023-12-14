@@ -8,26 +8,27 @@
 import axios from 'axios';
 
 import layout from '@/layout/default-layout.vue';
-import ViewLogService from "@/api/viewLog";
-import { preLoadImgs } from "@/utils/picture";
+import ViewLogService from '@/api/viewLog';
+import { preLoadImgs } from '@/utils/picture';
 
-const view = sessionStorage.getItem('view')
+const view = sessionStorage.getItem('view');
 
 if (view !== 'true') {
-    axios.get('/api/ip')
-    .then(res => {
-        if (res.status === 200) {
+    fetch('https://api.ipify.org?format=json')
+    .then(res=>{
+        res.json().then(res => {
             ViewLogService.createViewLog({
-                ip: res.data.ip
-            })
-        }
-        sessionStorage.setItem('view', 'true')
-    });
+                ip: res.ip,
+            }).then(res => sessionStorage.setItem('view', 'true'))
+        })
+        
+    })
 }
 
-preLoadImgs(["https://www.wchvan.online/files/pic/index-person.png", "https://www.wchvan.online/files/pic/friend-bg.jpg"])
-
-
+preLoadImgs([
+    'https://www.wchvan.online/files/pic/index-person.png',
+    'https://www.wchvan.online/files/pic/friend-bg.jpg',
+]);
 </script>
 
 <style lang="scss">

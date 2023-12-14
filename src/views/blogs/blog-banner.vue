@@ -6,17 +6,16 @@
         />
         <div class="title">
             <div class="name">{{ $route.query.name }}</div>
-            <div class="subTitle">{{ $t('blogs.banner.author') }} </div>
-            <div class="view"><i-ep-View class="eye"/> {{ props.view }}</div>
+            <div class="subTitle">{{ $t('blogs.banner.author') }}</div>
+            <div class="view"><i-ep-View class="eye" /> {{ props.view }}</div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-    view: number
-}>()
-
+    view: number;
+}>();
 </script>
 
 <style lang="scss" scoped>
@@ -51,14 +50,13 @@ const props = defineProps<{
             display: inline-flex;
             align-items: center;
         }
-        .view{
+        .view {
             display: flex;
             font-size: 32px;
             align-items: center;
             justify-content: center;
-            .eye{
-
-            margin: 0 10px;
+            .eye {
+                margin: 0 10px;
             }
         }
         .name {

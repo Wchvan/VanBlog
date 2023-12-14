@@ -26,18 +26,17 @@ import { useRouter } from 'vue-router';
 import PassageService from '@/api/passage';
 import { ref } from 'vue';
 import * as I from '@/interface/index.d';
-import ViewLogService from "@/api/viewLog";
+import ViewLogService from '@/api/viewLog';
 
 const router = useRouter();
 const total = ref<number>(0);
 const view = ref<number>(0);
 
-ViewLogService.getViewNum().then(res => {
+ViewLogService.getViewNum().then((res) => {
     if (res.code === 200) {
-        view.value = res.data.num
+        view.value = res.data.num;
     }
-})
-
+});
 
 const passageList = ref<
     {
@@ -52,7 +51,7 @@ PassageService.getPassages({
     if (res.code === 200) {
         passageList.value = res.data;
         for (let item of passageList.value) {
-            total.value += item.data.length
+            total.value += item.data.length;
         }
     }
 });

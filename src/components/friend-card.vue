@@ -1,11 +1,13 @@
 <template>
     <el-card class="card">
         <div class="user">
-            <el-avatar :src="props.avatar" class="user-avatar"/>
+            <el-avatar :src="props.avatar" class="user-avatar" />
             <div class="user-name">{{ props.name }}</div>
             <el-divider />
             <div class="user-desc">{{ props.desc }}</div>
-            <el-link class="user-link" :href="props.link" target="_blank">网址链接</el-link>
+            <el-link class="user-link" :href="props.link" target="_blank"
+                >网址链接</el-link
+            >
         </div>
     </el-card>
 </template>
@@ -16,38 +18,37 @@ const props = defineProps<{
     avatar: string;
     desc: string;
     link: string;
-}>()
+}>();
 </script>
 
 <style lang="scss" scoped>
-.card{
+.card {
     background-color: #fff;
     opacity: 0.8;
 }
-.user{
+.user {
     width: 320px;
     height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    &-avatar{
+    &-avatar {
         width: 100px;
         height: 100px;
         margin-bottom: 10px;
     }
-    &-name{
+    &-name {
         font-size: 32px;
     }
-    &-desc{
+    &-desc {
         text-indent: 2rem;
         line-height: 1.5;
     }
-    &-link{
+    &-link {
         font-size: 20px;
         position: absolute;
         bottom: 10px;
     }
 }
-
 </style>

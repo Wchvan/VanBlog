@@ -12,7 +12,7 @@ import mila from 'markdown-it-link-attributes';
 // 代码高亮
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
-import { imgLazyload } from "@mdit/plugin-img-lazyload";
+import { imgLazyload } from '@mdit/plugin-img-lazyload';
 
 const props = defineProps<{
     value: string;
@@ -58,7 +58,7 @@ const html = computed(() => {
         padding: 10px;
         color: #bbb;
         border-left: 5px solid #bbb;
-        p{
+        p {
             margin: 5px;
         }
     }
@@ -82,20 +82,20 @@ const html = computed(() => {
     h1 {
         font-size: 2.5rem;
         border-bottom: 0.5px solid #ddd;
-        margin: 30px 0 ;
+        margin: 30px 0;
     }
 
     h2 {
         font-size: 1.5em;
         border-bottom: 0.5px solid #eee;
-        margin: 30px 0 ;
+        margin: 30px 0;
     }
     h3,
     h4,
     h5,
     h6 {
         line-height: 1.4;
-        margin: 25px 0 ;
+        margin: 25px 0;
     }
 
     b,

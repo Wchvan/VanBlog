@@ -73,11 +73,6 @@ export default defineConfig({
                 changeOrigin: true,
                 rewrite: (path: string) => path.replace(/^\/api\/v3/, ''),
             },
-            '/api/ip': {
-                target: 'https://api.ipify.org?format=json',
-                changeOrigin: true,
-                rewrite: (path: string) => path.replace(/^\/api\/ip/, ''),
-            },
         },
     },
 });
