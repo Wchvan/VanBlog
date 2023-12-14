@@ -4,14 +4,17 @@ import { get, post } from '@/utils/request';
 
 const getPassages = async (params: I.Passage.GetPassages.Req) => {
     const res = (await post(
-        '/v1/passages',
+        '/v1/getPassages',
         params,
     )) as I.Passage.GetPassages.Res;
     return res;
 };
 
 const getPassage = async (params: I.Passage.GetPassage.Req) => {
-    const res = (await get('/v1/passage', params)) as I.Passage.GetPassage.Res;
+    const res = (await get(
+        '/v1/getPassage',
+        params,
+    )) as I.Passage.GetPassage.Res;
     return res;
 };
 

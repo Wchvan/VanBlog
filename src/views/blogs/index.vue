@@ -5,7 +5,7 @@
             <directory></directory>
         </template>
         <template v-else>
-            <blog-banner></blog-banner>
+            <blog-banner :view="viewNum"></blog-banner>
             <blog :value="md"></blog>
         </template>
     </div>
@@ -25,6 +25,7 @@ import PassageService from '@/api/passage';
 const route = useRoute();
 const menuFlag = ref<boolean>(true);
 const md = ref<string>('');
+const viewNum = ref<number>(0)
 
 watch(
     () => route,
@@ -34,6 +35,7 @@ watch(
                 id: Number(newVal.query.id),
             });
             if (res.code === 200) {
+                viewNum.value = res.data.viewNum
                 axios.get(`/api/v3${res.data.link}`).then((res) => {
                     md.value = res.data;
                     menuFlag.value = false;

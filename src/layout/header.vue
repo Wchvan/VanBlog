@@ -19,6 +19,9 @@
         <router-link to="/blogs" class="header-item header-link">{{
             $t('header.blogs')
         }}</router-link>
+        <router-link to="/friend" class="header-item header-link">{{
+            $t('header.friend')
+        }}</router-link>
         <div
             class="i18n header-item"
             style="cursor: pointer; margin-left: auto"

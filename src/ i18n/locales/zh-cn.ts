@@ -2,6 +2,7 @@ export default {
     common: {
         more: '查看更多',
         total: '全部',
+        view: '浏览量',
     },
     header: {
         theme: '主题',
@@ -9,6 +10,7 @@ export default {
         index: '首页',
         profile: '个人简历',
         blogs: '博客',
+        friend: '友链',
     },
     index: {
         resume: '查看我的简历',

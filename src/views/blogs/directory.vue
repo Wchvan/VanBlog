@@ -1,6 +1,7 @@
 <template>
     <div class="directory">
-        <button class="total">{{ $t('common.total') }} : {{ total }}</button>
+        <button class="btn total">{{ $t('common.total') }} {{ total }}</button>
+        <button class="btn view">{{ $t('common.view') }} {{ view }}</button>
         <div v-for="item in passageList" :key="item.date" class="blog">
             <div class="blog-date">{{ item.date }}</div>
             <div
@@ -25,9 +26,18 @@ import { useRouter } from 'vue-router';
 import PassageService from '@/api/passage';
 import { ref } from 'vue';
 import * as I from '@/interface/index.d';
+import ViewLogService from "@/api/viewLog";
 
 const router = useRouter();
 const total = ref<number>(0);
+const view = ref<number>(0);
+
+ViewLogService.getViewNum().then(res => {
+    if (res.code === 200) {
+        view.value = res.data.num
+    }
+})
+
 
 const passageList = ref<
     {
@@ -58,9 +68,10 @@ const goDetail = (passage: I.Passage.PassageItem) => {
     min-width: 500px;
     margin: 40px auto;
     overflow: hidden;
-    .total {
+    .btn {
         font-size: 16px;
         background-color: #e4e4e4;
+        margin: 0 15px;
         color: #0085a1;
         box-shadow: #0000001e 0 1px 6px, #0000003d 0 1px 4px;
         padding: 5px 24px;

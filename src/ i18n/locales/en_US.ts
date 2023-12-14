@@ -2,6 +2,7 @@ export default {
     common: {
         more: 'Look More',
         total: 'Total',
+        view: 'View',
     },
     header: {
         theme: 'Theme',
@@ -9,6 +10,7 @@ export default {
         index: 'Home',
         profile: 'Profile',
         blogs: 'Blog',
+        friend: 'Friend',
     },
     index: {
         resume: 'Check Out My Resume',

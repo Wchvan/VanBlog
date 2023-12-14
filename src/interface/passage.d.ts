@@ -5,6 +5,7 @@ export type PassageItem = {
     time: string;
     name: string;
     link: string;
+    viewNum: number;
 };
 
 export namespace GetPassages {

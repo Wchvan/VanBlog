@@ -6,12 +6,18 @@
         />
         <div class="title">
             <div class="name">{{ $route.query.name }}</div>
-            <div class="subTitle">{{ $t('blogs.banner.author') }}</div>
+            <div class="subTitle">{{ $t('blogs.banner.author') }} </div>
+            <div class="view"><i-ep-View class="eye"/> {{ props.view }}</div>
         </div>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+    view: number
+}>()
+
+</script>
 
 <style lang="scss" scoped>
 .banner {
@@ -42,6 +48,18 @@
             font-weight: 300;
             line-height: 50px;
             height: 50px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .view{
+            display: flex;
+            font-size: 32px;
+            align-items: center;
+            justify-content: center;
+            .eye{
+
+            margin: 0 10px;
+            }
         }
         .name {
             font-size: 70px;
