@@ -163,18 +163,18 @@ const html = computed(() => {
         }
 
         thead {
-            border-bottom-color: rgb(217, 217, 227);
+            // border-bottom-color: rgb(217, 217, 227);
             border-bottom-width: 1px;
 
             th {
-                color: #252626;
+                // color: #252626;
                 font-weight: 600;
-                background-color: rgba(236, 236, 241, 0.2);
+                // background-color: rgba(236, 236, 241, 0.2);
                 border-bottom-width: 1px;
                 border-left-width: 1px;
                 border-top-width: 1px;
                 padding: 0.25rem 0.75rem;
-                vertical-align: bottom;
+                // vertical-align: bottom;
 
                 &:first-child {
                     border-top-left-radius: 0.375rem;
@@ -208,7 +208,7 @@ const html = computed(() => {
             }
 
             td {
-                vertical-align: baseline;
+                // vertical-align: baseline;
                 border-bottom-width: 1px;
                 border-left-width: 1px;
                 padding: 0.25rem 0.75rem;
@@ -223,7 +223,7 @@ const html = computed(() => {
                 border-top-width: 1px;
 
                 td {
-                    vertical-align: top;
+                    // vertical-align: top;
                 }
             }
         }

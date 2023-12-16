@@ -113,6 +113,7 @@ watch(
     opacity: 1;
     transition: all 0.5s;
     min-width: 10vw;
+    max-width: 20vw;
 
     &-box {
         max-height: 70vh;
@@ -124,7 +125,7 @@ watch(
     }
 
     .cata-item {
-        height: 2rem;
+        // height: 2rem;
         line-height: 2rem;
     }
 
