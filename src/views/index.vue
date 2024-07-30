@@ -7,13 +7,13 @@
             </button>
         </div>
         <div class="right">
-            <img
-                src="https://www.wchvan.online/files/pic/index-person.png"
-                class="img"
-            />
+            <img src="https://www.wchvan.online/files/pic/index-person.png" class="img" />
         </div>
     </div>
-    <div class="footer">@Wchvan</div>
+    <div class="footer">
+        <span class="title">@Wchvan</span>
+        <span>备案号：<a class="icp" href="https://beian.miit.gov.cn/">闽ICP备2024028309号-1</a></span>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -66,10 +66,12 @@ const goProfile = () => {
     width: 100%;
     height: calc(100vh - 60px);
     display: flex;
+
     .left {
         flex: 1;
         height: 100%;
         position: relative;
+
         .desc {
             position: relative;
             top: calc(50% - 200px);
@@ -79,6 +81,7 @@ const goProfile = () => {
             font-weight: 600;
             // text-align: center;
         }
+
         .btn {
             position: absolute;
             bottom: calc(50% - 150px);
@@ -91,9 +94,11 @@ const goProfile = () => {
             @include btn_color();
         }
     }
+
     .right {
         flex: 2;
         position: relative;
+
         .img {
             position: absolute;
             height: 100vh;
@@ -102,6 +107,7 @@ const goProfile = () => {
         }
     }
 }
+
 .footer {
     width: 100%;
     height: 60px;
@@ -110,5 +116,15 @@ const goProfile = () => {
     text-align: center;
     font-size: 16px;
     font-weight: 300;
+    z-index: 100;
+    position: relative;
+
+    .title {
+        margin-right: 10px;
+    }
+
+    .icp {
+        color: $red-color;
+    }
 }
 </style>
